@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
-import { createUserWithEmailAndPassword, updateProfile  } from "firebase/auth";
-import {auth, db} from "../firebase";
-import { doc, setDoc } from "firebase/firestore"; 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import { apiClient } from '@/lib/api';
 
 const SignUp = () => {
 
@@ -35,38 +33,30 @@ const SignUp = () => {
             toast({
                 variant: "destructive",
                 title: "Error",
-                description: "Password must be greater that 6 characteres",
+                description: "Password must be 6+ characters",
             })
         }else{
-            createUserWithEmailAndPassword(auth, values.email, values.password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                console.log(user)
-                updateProfile(user, {
-                    displayName: values.name,
-                    photoURL: "https://github.com/shadcn.png"
-                }).then(() => {
-                    setDoc(doc(db, "users", user.uid), {
-                        name: user.displayName,
-                        email: user.email,
-                        uid: user.uid,
-                        photo: user.photoURL
-                    })
-                    router.replace('/')
-                }).catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.log(errorCode, errorMessage)
-                });
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
-                // ..
-            });
+            try {
+                const response = await apiClient.post('/users/register', {
+                    name: values.name,
+                    email: values.email,
+                    password: values.password
+                })
+                // Store user data from backend
+                localStorage.setItem('user', JSON.stringify(response))
+                localStorage.setItem('userId', response.id.toString())
+                toast({
+                    title: "Success",
+                    description: "Account created successfully!",
+                })
+                setTimeout(() => router.replace('/'), 1000)
+            } catch (error: any) {
+                toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: error.message || "Registration failed",
+                })
+            }
         }
     }
 

@@ -790,5 +790,695 @@
         "ICAO_code": "VEZO",
         "airport_name": "Zero Airport",
         "city": "Zero"
+        },
+        {
+        "code": "ALG",
+        "ICAO_code": "DAAG",
+        "airport_name": "Houari Boumediene Airport",
+        "city": "Algiers"
+        },
+        {
+        "code": "AAE",
+        "ICAO_code": "DABB",
+        "airport_name": "Rabah Bitat Airport",
+        "city": "Annaba"
+        },
+        {
+        "code": "BLJ",
+        "ICAO_code": "DABT",
+        "airport_name": "Batna Airport",
+        "city": "Batna"
+        },
+        {
+        "code": "BJA",
+        "ICAO_code": "DAOB",
+        "airport_name": "Soummam Airport",
+        "city": "Béjaïa"
+        },
+        {
+        "code": "CFK",
+        "ICAO_code": "DAOU",
+        "airport_name": "Chlef International Airport",
+        "city": "Chlef"
+        },
+        {
+        "code": "CZL",
+        "ICAO_code": "DAMC",
+        "airport_name": "Mohamed Boudiaf International Airport",
+        "city": "Constantine"
+        },
+        {
+        "code": "GJL",
+        "ICAO_code": "DAOJ",
+        "airport_name": "Jijel Ferhat Abbas Airport",
+        "city": "Jijel"
+        },
+        {
+        "code": "ORN",
+        "ICAO_code": "DAOO",
+        "airport_name": "Oran Es Senia Airport",
+        "city": "Oran"
+        },
+        {
+        "code": "BSK",
+        "ICAO_code": "DAUB",
+        "airport_name": "Biskra Airport",
+        "city": "Oumache"
+        },
+        {
+        "code": "QSF",
+        "ICAO_code": "DAUZ",
+        "airport_name": "Ain Arnat Airport",
+        "city": "Sétif"
+        },
+        {
+        "code": "TLM",
+        "ICAO_code": "DAON",
+        "airport_name": "Zenata – Messali El Hadj Airport",
+        "city": "Tlemcen"
+        },
+        {
+        "code": "HBE",
+        "ICAO_code": "HEBA",
+        "airport_name": "Alexandria International Airport",
+        "city": "Alexandria"
+        },
+        {
+        "code": "ATZ",
+        "ICAO_code": "HEAI",
+        "airport_name": "Assiut Airport",
+        "city": "Asyut"
+        },
+        {
+        "code": "ASW",
+        "ICAO_code": "HEAS",
+        "airport_name": "Aswan International Airport",
+        "city": "Aswan"
+        },
+        {
+        "code": "CAI",
+        "ICAO_code": "HECA",
+        "airport_name": "Cairo International Airport",
+        "city": "Cairo"
+        },
+        {
+        "code": "SPX",
+        "ICAO_code": "HECW",
+        "airport_name": "Sphinx International Airport",
+        "city": "Cairo"
+        },
+        {
+        "code": "AAC",
+        "ICAO_code": "HEAR",
+        "airport_name": "El Arish International Airport",
+        "city": "El Arish"
+        },
+        {
+        "code": "DBB",
+        "ICAO_code": "HEBD",
+        "airport_name": "El Alamein International Airport",
+        "city": "El Dabaa"
+        },
+        {
+        "code": "HRG",
+        "ICAO_code": "HEGN",
+        "airport_name": "Hurghada International Airport",
+        "city": "Hurghada"
+        },
+        {
+        "code": "LXR",
+        "ICAO_code": "HELX",
+        "airport_name": "Luxor International Airport",
+        "city": "Luxor"
+        },
+        {
+        "code": "RMF",
+        "ICAO_code": "HERM",
+        "airport_name": "Marsa Alam International Airport",
+        "city": "Marsa Alam"
+        },
+        {
+        "code": "MUH",
+        "ICAO_code": "HEMM",
+        "airport_name": "Mersa Matruh International Airport",
+        "city": "Mersa Matruh"
+        },
+        {
+        "code": "SKV",
+        "ICAO_code": "HESN",
+        "airport_name": "St. Catherine International Airport",
+        "city": "Saint Catherine"
+        },
+        {
+        "code": "SSH",
+        "ICAO_code": "HESH",
+        "airport_name": "Sharm El Sheikh International Airport",
+        "city": "Sharm El Sheikh"
+        },
+        {
+        "code": "HMB",
+        "ICAO_code": "HESO",
+        "airport_name": "Sohag International Airport",
+        "city": "Sohag"
+        },
+        {
+        "code": "TCP",
+        "ICAO_code": "HETB",
+        "airport_name": "Taba International Airport",
+        "city": "Taba"
+        },
+        {
+        "code": "BEN",
+        "ICAO_code": "HLLB",
+        "airport_name": "Benina International Airport",
+        "city": "Benghazi"
+        },
+        {
+        "code": "SEB",
+        "ICAO_code": "HLIS",
+        "airport_name": "Sabha Airport",
+        "city": "Sabha"
+        },
+        {
+        "code": "TIP",
+        "ICAO_code": "HLLT",
+        "airport_name": "Tripoli International Airport",
+        "city": "Tripoli"
+        },
+        {
+        "code": "MJI",
+        "ICAO_code": "HLLM",
+        "airport_name": "Mitiga International Airport",
+        "city": "Tajoura"
+        },
+        {
+        "code": "AGA",
+        "ICAO_code": "GMAD",
+        "airport_name": "Agadir–Al Massira Airport",
+        "city": "Agadir"
+        },
+        {
+        "code": "BEM",
+        "ICAO_code": "GMFB",
+        "airport_name": "Beni Mellal Airport",
+        "city": "Beni Mellal"
+        },
+        {
+        "code": "CMN",
+        "ICAO_code": "GMMN",
+        "airport_name": "Mohammed V International Airport",
+        "city": "Casablanca"
+        },
+        {
+        "code": "ESU",
+        "ICAO_code": "GMES",
+        "airport_name": "Essaouira-Mogador Airport",
+        "city": "Essaouira"
+        },
+        {
+        "code": "FEZ",
+        "ICAO_code": "GMFF",
+        "airport_name": "Fès–Saïs Airport",
+        "city": "Fes"
+        },
+        {
+        "code": "RAK",
+        "ICAO_code": "GMMR",
+        "airport_name": "Marrakesh Menara Airport",
+        "city": "Marrakesh"
+        },
+        {
+        "code": "NDR",
+        "ICAO_code": "GMFN",
+        "airport_name": "Nador International Airport",
+        "city": "Nador"
+        },
+        {
+        "code": "OZZ",
+        "ICAO_code": "GMMX",
+        "airport_name": "Ouarzazate Airport",
+        "city": "Ouarzazate"
+        },
+        {
+        "code": "OUD",
+        "ICAO_code": "GMFO",
+        "airport_name": "Angads Airport",
+        "city": "Oujda"
+        },
+        {
+        "code": "RBA",
+        "ICAO_code": "GMRN",
+        "airport_name": "Rabat–Salé Airport",
+        "city": "Rabat"
+        },
+        {
+        "code": "TNG",
+        "ICAO_code": "GMTN",
+        "airport_name": "Tangier Ibn Battouta Airport",
+        "city": "Tangier"
+        },
+        {
+        "code": "TTU",
+        "ICAO_code": "GMTT",
+        "airport_name": "Sania Ramel Airport",
+        "city": "Tetouan"
+        },
+        {
+        "code": "VIL",
+        "ICAO_code": "GMMK",
+        "airport_name": "Dakhla Airport",
+        "city": "Dakhla"
+        },
+        {
+        "code": "EUN",
+        "ICAO_code": "GMWE",
+        "airport_name": "Hassan I Airport",
+        "city": "Laayoune"
+        },
+        {
+        "code": "KRT",
+        "ICAO_code": "HSSS",
+        "airport_name": "Khartoum International Airport",
+        "city": "Khartoum"
+        },
+        {
+        "code": "PZU",
+        "ICAO_code": "HSPN",
+        "airport_name": "Port Sudan New International Airport",
+        "city": "Port Sudan"
+        },
+        {
+        "code": "DJE",
+        "ICAO_code": "DTTJ",
+        "airport_name": "Djerba–Zarzis International Airport",
+        "city": "Djerba"
+        },
+        {
+        "code": "NBE",
+        "ICAO_code": "DTNE",
+        "airport_name": "Enfidha–Hammamet International Airport",
+        "city": "Enfidha"
+        },
+        {
+        "code": "MIR",
+        "ICAO_code": "DTMR",
+        "airport_name": "Monastir Habib Bourguiba International Airport",
+        "city": "Monastir"
+        },
+        {
+        "code": "SFA",
+        "ICAO_code": "DTSF",
+        "airport_name": "Sfax–Thyna International Airport",
+        "city": "Sfax"
+        },
+        {
+        "code": "TBJ",
+        "ICAO_code": "DTTB",
+        "airport_name": "Tabarka–Aïn Draham International Airport",
+        "city": "Tabarka"
+        },
+        {
+        "code": "TOE",
+        "ICAO_code": "DTTZ",
+        "airport_name": "Tozeur–Nefta International Airport",
+        "city": "Tozeur"
+        },
+        {
+        "code": "TUN",
+        "ICAO_code": "DTTA",
+        "airport_name": "Tunis–Carthage International Airport",
+        "city": "Tunis"
+        },
+        {
+        "code": "COO",
+        "ICAO_code": "DBBS",
+        "airport_name": "Cadjehoun Airport",
+        "city": "Cotonou"
+        },
+        {
+        "code": "BOY",
+        "ICAO_code": "DFBO",
+        "airport_name": "Bobo Dioulasso Airport",
+        "city": "Bobo-Dioulasso"
+        },
+        {
+        "code": "OUA",
+        "ICAO_code": "DFOO",
+        "airport_name": "Thomas Sankara International Airport Ouagadougou",
+        "city": "Ouagadougou"
+        },
+        {
+        "code": "BVC",
+        "ICAO_code": "GQNF",
+        "airport_name": "Aristides Pereira International Airport",
+        "city": "Boa Vista"
+        },
+        {
+        "code": "SID",
+        "ICAO_code": "GQPP",
+        "airport_name": "Amílcar Cabral International Airport",
+        "city": "Sal Island"
+        },
+        {
+        "code": "RAI",
+        "ICAO_code": "GQPP",
+        "airport_name": "Nelson Mandela International Airport",
+        "city": "Praia, Santiago Island"
+        },
+        {
+        "code": "VXE",
+        "ICAO_code": "GQSR",
+        "airport_name": "Cesária Évora Airport",
+        "city": "São Vicente"
+        },
+        {
+        "code": "BFN",
+        "ICAO_code": "FABLE",
+        "airport_name": "Bram Fischer International Airport",
+        "city": "Bloemfontein"
+        },
+        {
+        "code": "CPT",
+        "ICAO_code": "FACT",
+        "airport_name": "Cape Town International Airport",
+        "city": "Cape Town"
+        },
+        {
+        "code": "DUR",
+        "ICAO_code": "FAOR",
+        "airport_name": "King Shaka International Airport",
+        "city": "Durban"
+        },
+        {
+        "code": "ELS",
+        "ICAO_code": "FAEL",
+        "airport_name": "East London Airport",
+        "city": "East London"
+        },
+        {
+        "code": "JNB",
+        "ICAO_code": "FAOR",
+        "airport_name": "O. R. Tambo International Airport",
+        "city": "Johannesburg"
+        },
+        {
+        "code": "HLA",
+        "ICAO_code": "FALA",
+        "airport_name": "Lanseria International Airport",
+        "city": "Lanseria"
+        },
+        {
+        "code": "MQP",
+        "ICAO_code": "FAKM",
+        "airport_name": "Kruger Mpumalanga International Airport",
+        "city": "Nelspruit"
+        },
+        {
+        "code": "PTG",
+        "ICAO_code": "FAPP",
+        "airport_name": "Polokwane International Airport",
+        "city": "Polokwane"
+        },
+        {
+        "code": "AYJ",
+        "ICAO_code": "VEAY",
+        "airport_name": "Maharishi Valmiki International Airport",
+        "city": "Ayodhya"
+        },
+        {
+        "code": "AZH",
+        "ICAO_code": "VEAH",
+        "airport_name": "Azamgarh Airport",
+        "city": "Azamgarh"
+        },
+        {
+        "code": "CWK",
+        "ICAO_code": "VECT",
+        "airport_name": "Chitrakoot Airport",
+        "city": "Chitrakoot"
+        },
+        {
+        "code": "HDO",
+        "ICAO_code": "VIDX",
+        "airport_name": "Hindon Airport",
+        "city": "Ghaziabad"
+        },
+        {
+        "code": "KBK",
+        "ICAO_code": "VEKI",
+        "airport_name": "Kushinagar International Airport",
+        "city": "Kushinagar"
+        },
+        {
+        "code": "DXN",
+        "ICAO_code": "VIND",
+        "airport_name": "Noida International Airport",
+        "city": "Noida"
+        },
+        {
+        "code": "MZS",
+        "ICAO_code": "VI2B",
+        "airport_name": "Dr. Bhimrao Ambedkar Airstrip",
+        "city": "Meerut"
+        },
+        {
+        "code": "SWN",
+        "ICAO_code": "VISP",
+        "airport_name": "Sarsawa Airport",
+        "city": "Saharanpur"
+        },
+        {
+        "code": "VSV",
+        "ICAO_code": "VISV",
+        "airport_name": "Shravasti Airport",
+        "city": "Shravasti"
+        },
+        {
+        "code": "HRH",
+        "ICAO_code": "VIAH",
+        "airport_name": "Aligarh Airport",
+        "city": "Aligarh"
+        },
+        {
+        "code": "NNS",
+        "ICAO_code": "VIPG",
+        "airport_name": "Naini-Saini Airport",
+        "city": "Pithoragarh"
+        },
+        {
+        "code": "BKB",
+        "ICAO_code": "VIBK",
+        "airport_name": "Bikaner Airport",
+        "city": "Bikaner"
+        },
+        {
+        "code": "KTU",
+        "ICAO_code": "VIKO",
+        "airport_name": "Kota Airport",
+        "city": "Kota"
+        },
+        {
+        "code": "UDR",
+        "ICAO_code": "VAUD",
+        "airport_name": "Maharana Pratap Airport",
+        "city": "Udaipur"
+        },
+        {
+        "code": "KQH",
+        "ICAO_code": "VIKG",
+        "airport_name": "Kishangarh Airport",
+        "city": "Kishangarh"
+        },
+        {
+        "code": "DIU",
+        "ICAO_code": "VADU",
+        "airport_name": "Diu Airport",
+        "city": "Diu"
+        },
+        {
+        "code": "NMB",
+        "ICAO_code": "VADN",
+        "airport_name": "Daman Airport",
+        "city": "Daman"
+        },
+        {
+        "code": "PNY",
+        "ICAO_code": "VOPC",
+        "airport_name": "Pondicherry Airport",
+        "city": "Puducherry"
+        },
+        {
+        "code": "JAI",
+        "ICAO_code": "VIJP",
+        "airport_name": "Jaipur International Airport",
+        "city": "Jaipur"
+        },
+        {
+        "code": "ISK",
+        "ICAO_code": "VAOZ",
+        "airport_name": "Nashik International Airport",
+        "city": "Nashik"
+        },
+        {
+        "code": "NMI",
+        "ICAO_code": "VANM",
+        "airport_name": "Navi Mumbai International Airport",
+        "city": "Navi Mumbai"
+        },
+        {
+        "code": "HSS",
+        "ICAO_code": "VIHR",
+        "airport_name": "Maharaja Agrasen International Airport",
+        "city": "Hisar"
+        },
+        {
+        "code": "HWR",
+        "ICAO_code": "VIHX",
+        "airport_name": "Shaheed Kartar Singh Sarabha International Airport",
+        "city": "Shaheed Kartar Singh Sarabha"
+        },
+        {
+        "code": "JSA",
+        "ICAO_code": "VIJR",
+        "airport_name": "Jaisalmer Airport",
+        "city": "Jaisalmer"
+        },
+        {
+        "code": "JDH",
+        "ICAO_code": "VIJO",
+        "airport_name": "Jodhpur Airport",
+        "city": "Jodhpur"
+        },
+        {
+        "code": "IXC",
+        "ICAO_code": "VICG",
+        "airport_name": "Shaheed Bhagat Singh International Airport",
+        "city": "Mohali"
+        },
+        {
+        "code": "AIP",
+        "ICAO_code": "VIAX",
+        "airport_name": "Shri Guru Ravidass Maharaj Ji Airport",
+        "city": "Jalandhar"
+        },
+        {
+        "code": "RRK",
+        "ICAO_code": "VERK",
+        "airport_name": "Rourkela Airport",
+        "city": "Rourkela"
+        },
+        {
+        "code": "UKE",
+        "ICAO_code": "VEUK",
+        "airport_name": "Utkela Airport",
+        "city": "Utkela"
+        },
+        {
+        "code": "JRG",
+        "ICAO_code": "VEJH",
+        "airport_name": "Veer Surendra Sai Airport",
+        "city": "Jharsuguda"
+        },
+        {
+        "code": "PYB",
+        "ICAO_code": "VEJP",
+        "airport_name": "Jeypore Airport",
+        "city": "Jeypore"
+        },
+        {
+        "code": "GBI",
+        "ICAO_code": "VOGB",
+        "airport_name": "Kalaburagi Airport",
+        "city": "Kalaburagi"
+        },
+        {
+        "code": "VDY",
+        "ICAO_code": "VOJV",
+        "airport_name": "Jindal Vijaynagar Airport",
+        "city": "Ballari"
+        },
+        {
+        "code": "IXG",
+        "ICAO_code": "VOBM",
+        "airport_name": "Belagavi Airport",
+        "city": "Belagavi"
+        },
+        {
+        "code": "HBX",
+        "ICAO_code": "VOHB",
+        "airport_name": "Hubli Airport",
+        "city": "Hubli"
+        },
+        {
+        "code": "RQY",
+        "ICAO_code": "VOSH",
+        "airport_name": "Rashtrakavi Kuvempu Airport",
+        "city": "Shivamogga"
+        },
+        {
+        "code": "MYQ",
+        "ICAO_code": "VOMY",
+        "airport_name": "Mysuru Airport",
+        "city": "Mysuru"
+        },
+        {
+        "code": "CNN",
+        "ICAO_code": "VOKN",
+        "airport_name": "Kannur International Airport",
+        "city": "Kannur"
+        },
+        {
+        "code": "IDR",
+        "ICAO_code": "VAID",
+        "airport_name": "Devi Ahilyabai Holkar International Airport",
+        "city": "Indore"
+        },
+        {
+        "code": "GWL",
+        "ICAO_code": "VIGR",
+        "airport_name": "Rajmata Vijaya Raje Scindia Airport",
+        "city": "Gwalior"
+        },
+        {
+        "code": "TNI",
+        "ICAO_code": "VEST",
+        "airport_name": "Satna Airport",
+        "city": "Satna"
+        },
+        {
+        "code": "HJR",
+        "ICAO_code": "VAKJ",
+        "airport_name": "Khajuraho Airport",
+        "city": "Khajuraho"
+        },
+        {
+        "code": "JLR",
+        "ICAO_code": "VAJB",
+        "airport_name": "Jabalpur Airport",
+        "city": "Jabalpur"
+        },
+        {
+        "code": "RAV",
+        "ICAO_code": "VARG",
+        "airport_name": "Ratnagiri Airport",
+        "city": "Ratnagiri"
+        },
+        {
+        "code": "SAG",
+        "ICAO_code": "VASD",
+        "airport_name": "Shirdi Airport",
+        "city": "Shirdi"
+        },
+        {
+        "code": "NDC",
+        "ICAO_code": "VAND",
+        "airport_name": "Shri Guru Gobind Singh Ji Airport",
+        "city": "Nanded"
+        },
+        {
+        "code": "KLH",
+        "ICAO_code": "VAKP",
+        "airport_name": "Chhatrapati Rajaram Maharaj Airport",
+        "city": "Kolhapur"
         }
     ]

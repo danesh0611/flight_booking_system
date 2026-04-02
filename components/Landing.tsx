@@ -16,8 +16,7 @@ import { Input } from "@/components/ui/input"
 import { CalendarIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
-import { collection, doc, getDocs, setDoc, query, where, onSnapshot} from "firebase/firestore"; 
-import {db} from '../firebase.js'
+import { apiClient } from '@/lib/api';
 
 const Landing = () => {
 
@@ -32,25 +31,29 @@ const Landing = () => {
     const { toast } = useToast();
 
     const handleSearch = async () => {
-        const unsub = onSnapshot(
-        query(collection(db, "flights"), where("fromCity", "==", fromCity.replace(/\b\w/g, x => x.toUpperCase())) && where("toCity", "==", toCity.replace(/\b\w/g, x => x.toUpperCase()) )),
-        (collectionRef) => {
-            let arr:any = [];
-            collectionRef.forEach((doc) => {
-                arr.push({ ...doc.data(), id: doc.id });
-            });
-            setFlights(arr);
-            if (arr.length === 0){
+        try {
+            const allFlights = await apiClient.get('/flights')
+            // Filter flights based on departure and arrival airport codes
+            const filtered = allFlights.filter((flight: any) => 
+                flight.departureAirport === fromCity &&
+                flight.arrivalAirport === toCity
+            )
+            setFlights(filtered)
+            if (filtered.length === 0){
                 toast({
                     variant: "destructive",
                     title: "Error",
                     description: "No Flights Found between given cities",
                 })
             }
+        } catch (error) {
+            toast({
+                variant: "destructive",
+                title: "Error",
+                description: "Failed to search flights",
+            })
+            console.error(error)
         }
-
-        );
-        
     }
     
     const handleBook = (flightNumber: any) => {
@@ -93,7 +96,7 @@ const Landing = () => {
                                     className="w-full justify-between"
                                     >
                                     {fromCity
-                                        ? airports.find((airport) => airport.city === fromCity.replace(/\b\w/g, x => x.toUpperCase()))?.city
+                                        ? airports.find((airport) => airport.code === fromCity)?.city
                                         : ""}
                                     {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
                                     </Button>
@@ -107,7 +110,7 @@ const Landing = () => {
                                             <CommandItem
                                                 key={airport.code}
                                                 onSelect={(currentValue) => {
-                                                    setfromCity(currentValue === fromCity ? "" : currentValue)
+                                                    setfromCity(currentValue === fromCity ? "" : airport.code)
                                                     setOpen(false)
                                                 }}
                                             >
@@ -117,7 +120,7 @@ const Landing = () => {
                                                 <CheckIcon
                                                 className={cn(
                                                     "ml-auto h-4 w-4",
-                                                    fromCity === airport.city ? "opacity-100" : "opacity-0"
+                                                    fromCity === airport.code ? "opacity-100" : "opacity-0"
                                                 )}
                                                 />
                                             </CommandItem>
@@ -141,7 +144,7 @@ const Landing = () => {
                                     className="w-full justify-between"
                                     >
                                     {toCity
-                                        ? airports.find((airport) => airport.city === toCity.replace(/\b\w/g, x => x.toUpperCase()))?.city
+                                        ? airports.find((airport) => airport.code === toCity)?.city
                                         : ""}
                                     {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
                                     </Button>
@@ -154,10 +157,10 @@ const Landing = () => {
                                             <div className="h-56 overflow-y-scroll">
                                                 {airports.map((airport) => (
                                                 <CommandItem
-                                                    className={`${airport.city === fromCity.replace(/\b\w/g, x => x.toUpperCase()) ? "hidden" : "block"}`}
+                                                    className={`${airport.code === fromCity ? "hidden" : "block"}`}
                                                     key={airport.code}
                                                     onSelect={(currentValue) => {
-                                                        setToCity(currentValue === toCity ? "" : currentValue)
+                                                        setToCity(currentValue === toCity ? "" : airport.code)
                                                         setOpen2(false)
                                                     }}
                                                 >
@@ -167,7 +170,7 @@ const Landing = () => {
                                                     <CheckIcon
                                                     className={cn(
                                                         "ml-auto h-4 w-4",
-                                                        toCity === airport.city ? "opacity-100" : "opacity-0"
+                                                        toCity === airport.code ? "opacity-100" : "opacity-0"
                                                     )}
                                                     />
                                                 </CommandItem>
@@ -210,41 +213,38 @@ const Landing = () => {
                 </div>
                 <div>
                     {
-                        flights.map((flight, idx) => (
+                        flights.map((flight, idx) => {
+                            const fromAirport = airports.find(a => a.code === flight.departureAirport)
+                            const toAirport = airports.find(a => a.code === flight.arrivalAirport)
+                            return (
                             <div key={idx} className={`w-full bg-slate-300/40 p-4 grid grid-cols-1 md:grid-cols-6 place-items-center rounded-lg shadow-md mb-4`}>
                                 <div className="flex items-center gap-2 md:col-span-1">
-                                    {/* @ts-ignore */}
-                                    <Image src={flight.logo} alt={flight.airlineName} width={44} height={44}/>
-                                    {/* @ts-ignore */}
-                                    <p className="font-medium text-sm text-slate-500">{flight.flightNumber}</p>
+                                    <p className="font-medium text-sm text-slate-700">{flight.flightNumber}</p>
+                                    <p className="font-medium text-sm text-slate-500">{flight.airline}</p>
                                 </div>
                                 <div className="grid grid-cols-3 gap-2 place-items-center md:col-span-3">
                                     <div className="">
-                                        {/* @ts-ignore */}
-                                        <h1 className="text-lg font-medium">{flight.fromAirport.city}</h1>
-                                        {/* @ts-ignore */}
-                                        <p className="font-medium text-sm text-slate-500">{flight.fromAirport.code}</p>
+                                        <h1 className="text-lg font-medium">{fromAirport?.city || 'N/A'}</h1>
+                                        <p className="font-medium text-sm text-slate-500">{fromAirport?.code || 'N/A'}</p>
                                     </div>
                                     <div>
-                                        {/* svg */}
                                         <Image src={'/assets/flight.svg'} alt={'logo'} width={2} height={2} className="w-40"/>
                                     </div>
                                     <div>
-                                        {/* @ts-ignore */}
-                                        <h1 className="text-lg font-medium">{flight.toAirport.city}</h1>
-                                        {/* @ts-ignore */}
-                                        <p className="font-medium text-sm text-slate-500">{flight.toAirport.code}</p>
+                                        <h1 className="text-lg font-medium">{toAirport?.city || 'N/A'}</h1>
+                                        <p className="font-medium text-sm text-slate-500">{toAirport?.code || 'N/A'}</p>
                                     </div>
                                 </div>
                                 <div>
-                                    {/* @ts-ignore */}
-                                    <h1 className="text-lg font-medium">{flight.time}</h1>
+                                    <h1 className="text-lg font-medium">{new Date(flight.departureTime).toLocaleTimeString()}</h1>
                                 </div>
                                 <div>
-                                    {/* @ts-ignore */}
                                     <Button onClick={() => handleBook(flight.flightNumber)} className='bg-lime-500 hover:bg-lime-600'>View Details</Button>
                                 </div>
                             </div>
+                            )
+                        })
+                    }
                         ))
                     }
                 </div>

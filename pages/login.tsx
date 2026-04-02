@@ -1,21 +1,16 @@
 import React,{useState} from 'react'
 import Google from "../assets/google.png";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../firebase"
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import { apiClient } from '@/lib/api';
 
 
 const Login = () => {
-    const provider = new GoogleAuthProvider();
     const router = useRouter()
     const { toast } = useToast()
-    
-
     
     const [values, setValues] = useState({
         email: '',
@@ -26,7 +21,7 @@ const Login = () => {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const handleLogin = (e: { preventDefault: () => void; } | undefined) => {
+    const handleLogin = async (e: { preventDefault: () => void; } | undefined) => {
         e?.preventDefault()
         if(!values.email || !values.password){
             toast({
@@ -38,35 +33,29 @@ const Login = () => {
             toast({
                 variant: "destructive",
                 title: "Error",
-                description: "Password must be greater that 6 characteres",
+                description: "Password must be 6+ characters",
             })
         }else{
-            signInWithEmailAndPassword(auth, values.email, values.password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                router.replace('/')
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                console.log(errorCode)
-                if(errorCode === "auth/wrong-password"){
-                    toast({
-                        variant: "destructive",
-                        title: "Error",
-                        description: "Invalid password",
-                    })
-                }
-                else if(errorCode==="auth/user-not-found"){
-                    toast({
-                        variant: "destructive",
-                        title: "Error",
-                        description: "This Email is not registered as admin",
-                    })
-                }
-                
-            })
+            try {
+                const response = await apiClient.post('/users/login', {
+                    email: values.email,
+                    password: values.password
+                })
+                // Store user data from backend
+                localStorage.setItem('user', JSON.stringify(response))
+                localStorage.setItem('userId', response.id.toString())
+                toast({
+                    title: "Success",
+                    description: "Logged in successfully!",
+                })
+                setTimeout(() => router.replace('/'), 1000)
+            } catch (error: any) {
+                toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: error.message || "Login failed",
+                })
+            }
         }
     }
 

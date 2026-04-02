@@ -2,8 +2,6 @@ import { useEffect } from "react"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import {auth} from "../firebase";
 import { useRouter } from 'next/navigation'
 
 const Header = () => {
@@ -19,29 +17,21 @@ const Header = () => {
     }
 
     const handleSignOut = () =>{
-        signOut(auth)
-        .then(() => {
-            router.replace('/login')
-        })
-        .catch((error) => {
-                console.log(error);
-        });
-        }
+        localStorage.removeItem('user')
+        router.replace('/login')
+    }
         
     useEffect(() => {
         window.addEventListener("scroll", listenScrollEvent)
     })
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // const uid = user.uid;
-                setUser(true)
-                // ...
-            } else {
-                setUser(false)
-            }
-        });
+        const userData = localStorage.getItem('user')
+        if (userData) {
+            setUser(true)
+        } else {
+            setUser(false)
+        }
     },[])
 
     return (
@@ -53,8 +43,8 @@ const Header = () => {
                 <a href="#contact" className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Contact</a>
             </div>
             <div className="flex items-center gap-4">
-                <Link href="https://airvista-admin.vercel.app">
-                    <button className="py-2 px-4 text-sm outline-none rounded cursor-pointer hover:text-slate-800 hover:bg-blue-500/10 transition-all duration-300 text-slate-500 font-medium">Admin Login</button>
+                <Link href="/admin-login">
+                    <button className="py-2 px-4 text-sm outline-none rounded cursor-pointer hover:text-slate-800 hover:bg-red-500/10 transition-all duration-300 text-red-600 font-medium">Admin Login</button>
                 </Link>
                 {
                     user ? 
