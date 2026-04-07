@@ -1,14 +1,16 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api';
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://flight-hdgcc9ezcea3eaad.centralindia-01.azurewebsites.net/api').replace(/\/$/, '');
+
+const buildUrl = (endpoint: string) => `${API_URL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
 
 export const apiClient = {
   async get(endpoint: string) {
-    const response = await fetch(`${API_URL}${endpoint}`);
+    const response = await fetch(buildUrl(endpoint));
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     return response.json();
   },
 
   async post(endpoint: string, data: unknown) {
-    const response = await fetch(`${API_URL}${endpoint}`, {
+    const response = await fetch(buildUrl(endpoint), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -18,7 +20,7 @@ export const apiClient = {
   },
 
   async put(endpoint: string, data: unknown) {
-    const response = await fetch(`${API_URL}${endpoint}`, {
+    const response = await fetch(buildUrl(endpoint), {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -28,7 +30,7 @@ export const apiClient = {
   },
 
   async patch(endpoint: string, data: unknown) {
-    const response = await fetch(`${API_URL}${endpoint}`, {
+    const response = await fetch(buildUrl(endpoint), {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -38,7 +40,7 @@ export const apiClient = {
   },
 
   async delete(endpoint: string) {
-    const response = await fetch(`${API_URL}${endpoint}`, {
+    const response = await fetch(buildUrl(endpoint), {
       method: 'DELETE',
     });
     if (!response.ok) throw new Error(`API error: ${response.status}`);

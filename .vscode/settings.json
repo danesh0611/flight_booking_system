@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/16dfc99f-5f59-43dd-b634-a61299cc7117/resourceGroups/flight/providers/Microsoft.Web/sites/flight",
+    "appService.deploySubpath": "backend"
+}
