@@ -187,7 +187,7 @@ const AdminBookings = () => {
 
             <div class="section">
               <div class="section-title">Total Cost</div>
-              <p style="text-align: right; font-size: 18px;"><strong>$${booking.totalPrice}</strong></p>
+              <p style="text-align: right; font-size: 18px;"><strong>₹${booking.totalPrice}</strong></p>
             </div>
 
             <div class="footer">
@@ -271,7 +271,7 @@ const AdminBookings = () => {
                       <p className="text-sm text-gray-500">{booking.departureTime}</p>
                     </div>
                     <div className="hidden md:block">
-                      <p className="text-sm text-gray-900">${booking.totalPrice}</p>
+                      <p className="text-sm text-gray-900">₹${booking.totalPrice}</p>
                       <p className="text-sm text-gray-500">{booking.numberOfSeats} passengers</p>
                     </div>
                   </div>

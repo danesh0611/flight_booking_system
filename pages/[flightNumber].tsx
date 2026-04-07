@@ -24,6 +24,10 @@ interface Passenger {
 
 const FlightNumber = () => {
 
+    const isValidEmail = (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    }
+
     const router = useRouter();
     const [flight, setFlight] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -72,7 +76,7 @@ const FlightNumber = () => {
 
         // Validate all passengers have required fields
         const allPassengersValid = passengers.every(p => 
-            p.fullName && p.email && p.phone && p.dateOfBirth && p.gender && p.nationality && p.passportNumber
+            p.fullName && p.email && isValidEmail(p.email) && p.phone && p.dateOfBirth && p.gender && p.nationality && p.passportNumber
         )
 
         if (!allPassengersValid) {
@@ -81,6 +85,7 @@ const FlightNumber = () => {
                 const missing: string[] = []
                 if (!p.fullName) missing.push('Full Name')
                 if (!p.email) missing.push('Email')
+                else if (!isValidEmail(p.email)) missing.push('Valid Email')
                 if (!p.phone) missing.push('Phone')
                 if (!p.dateOfBirth) missing.push('Date of Birth')
                 if (!p.gender) missing.push('Gender')
@@ -261,10 +266,10 @@ const FlightNumber = () => {
                                 <div>Total ({numberOfSeats} {numberOfSeats === 1 ? 'person' : 'people'})</div>
                             </div>
                             <div className='grid grid-row-4'>
-                                <div>: ${flight.price}</div>
-                                <div>: $200</div>
-                                <div>: $150</div>
-                                <div className='font-medium'>: ${totalPrice}</div>
+                                <div>: ₹{flight.price}</div>
+                                <div>: ₹200</div>
+                                <div>: ₹150</div>
+                                <div className='font-medium'>: ₹{totalPrice}</div>
                             </div>
                         </div>
                 </div>

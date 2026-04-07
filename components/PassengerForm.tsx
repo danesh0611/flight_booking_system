@@ -101,6 +101,8 @@ const PassengerForm: React.FC<PassengerFormProps> = ({ numberOfPassengers, onPas
               <Input
                 id={`email-${index}`}
                 type='email'
+                pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
+                title='Enter a valid email address'
                 placeholder='Enter email'
                 value={passenger.email}
                 onChange={(e) => handlePassengerChange(index, 'email', e.target.value)}

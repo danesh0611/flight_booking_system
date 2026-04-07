@@ -121,7 +121,7 @@ const AdminDashboard = () => {
                     <div className="bg-white rounded-lg shadow p-6">
                         <h3 className="text-gray-500 text-sm font-medium">Total Value</h3>
                         <p className="text-3xl font-bold text-slate-900 mt-2">
-                            ${flights.reduce((sum, f) => sum + (f.price * f.availableSeats || 0), 0)}
+                            ₹{flights.reduce((sum, f) => sum + (f.price * f.availableSeats || 0), 0)}
                         </p>
                     </div>
                 </div>
@@ -157,7 +157,7 @@ const AdminDashboard = () => {
                                         <td className="px-6 py-4 text-sm text-gray-900">
                                             {flight.departureAirport} → {flight.arrivalAirport}
                                         </td>
-                                        <td className="px-6 py-4 text-sm text-gray-900">${flight.price}</td>
+                                        <td className="px-6 py-4 text-sm text-gray-900">₹{flight.price}</td>
                                         <td className="px-6 py-4 text-sm">
                                             <span className={`px-3 py-1 rounded text-sm font-medium ${
                                                 flight.availableSeats > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'

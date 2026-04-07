@@ -152,7 +152,7 @@ const Booked = () => {
 
             <div class="section">
               <div class="section-title">Total Cost</div>
-              <p style="text-align: right; font-size: 18px;"><strong>$${booking.totalPrice}</strong></p>
+              <p style="text-align: right; font-size: 18px;"><strong>₹${booking.totalPrice}</strong></p>
             </div>
 
             <div class="footer">
@@ -286,7 +286,7 @@ const Booked = () => {
           
           <div className='flex justify-between items-center'>
             <span className='text-lg'>Total Amount</span>
-            <span className='text-2xl font-bold text-yellow-700'>${booking.totalPrice}</span>
+            <span className='text-2xl font-bold text-yellow-700'>₹{booking.totalPrice}</span>
           </div>
           <p className='text-sm text-gray-600 mt-4 italic'>
             ℹ️ Payment instructions: Please visit the airport counter with your confirmation details to complete payment and receive your ticket

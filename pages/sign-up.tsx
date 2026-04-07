@@ -7,6 +7,10 @@ import { apiClient } from '@/lib/api';
 
 const SignUp = () => {
 
+    const isValidEmail = (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    }
+
     const [values, setValues] = useState({
         email: '',
         password: '',
@@ -28,6 +32,12 @@ const SignUp = () => {
                 variant: "destructive",
                 title: "Error",
                 description: "Fill up the missing fields",
+            })
+        }else if(!isValidEmail(values.email)){
+            toast({
+                variant: "destructive",
+                title: "Error",
+                description: "Enter a valid email address",
             })
         }else if(values.password.length < 6){
             toast({

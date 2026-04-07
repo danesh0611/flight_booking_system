@@ -301,14 +301,14 @@ const AddFlight = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-900 mb-2">
-                                    Price per Seat ($) *
+                                    Price per Seat (₹) *
                                 </label>
                                 <input
                                     type="number"
                                     name="price"
                                     value={formData.price}
                                     onChange={handleChange}
-                                    placeholder="e.g., 299.99"
+                                    placeholder="e.g., 2999"
                                     min="0.01"
                                     step="0.01"
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent"

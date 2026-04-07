@@ -325,7 +325,7 @@ const EditFlight = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-900 mb-2">
-                                    Price per Seat ($) *
+                                    Price per Seat (₹) *
                                 </label>
                                 <input
                                     type="number"
