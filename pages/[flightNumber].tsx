@@ -76,9 +76,9 @@ const FlightNumber = () => {
         )
 
         if (!allPassengersValid) {
-            const missingFields = []
+            const missingFields: string[] = []
             passengers.forEach((p, idx) => {
-                const missing = []
+                const missing: string[] = []
                 if (!p.fullName) missing.push('Full Name')
                 if (!p.email) missing.push('Email')
                 if (!p.phone) missing.push('Phone')

@@ -18,6 +18,14 @@ import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import { apiClient } from '@/lib/api';
 
+type Flight = {
+    flightNumber: string;
+    airline: string;
+    departureAirport: string;
+    arrivalAirport: string;
+    departureTime: string;
+}
+
 const Landing = () => {
 
     const [date, setDate] = useState<Date>()
@@ -25,16 +33,16 @@ const Landing = () => {
     const [open2, setOpen2] = useState(false)
     const [fromCity, setfromCity] = useState("");
     const [toCity, setToCity] = useState("");
-    const [flights, setFlights] = useState([]);
+    const [flights, setFlights] = useState<Flight[]>([]);
 
     const router = useRouter();
     const { toast } = useToast();
 
     const handleSearch = async () => {
         try {
-            const allFlights = await apiClient.get('/flights')
+            const allFlights = await apiClient.get('/flights') as Flight[]
             // Filter flights based on departure and arrival airport codes
-            const filtered = allFlights.filter((flight: any) => 
+            const filtered = allFlights.filter((flight) => 
                 flight.departureAirport === fromCity &&
                 flight.arrivalAirport === toCity
             )
@@ -244,8 +252,6 @@ const Landing = () => {
                             </div>
                             )
                         })
-                    }
-                        ))
                     }
                 </div>
             </div>

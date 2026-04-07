@@ -38,8 +38,13 @@ const Header = () => {
         <div className={header}>
             <Link href="/"><Image src={"/assets/nav_logo.png"} height={100} width={100} alt="nav_image"/></Link>
             <div className="lg:flex items-center gap-8 hidden">
-                <h1 className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Home</h1>
-                <a href="#features" className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Manage</a>
+                <Link href="/">
+                    <span className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Home</span>
+                </Link>
+                <Link href="/features">
+                    <span className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Features</span>
+                </Link>
+                <a href="#manage" className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Manage</a>
                 <a href="#contact" className="text-sm text-slate-500 hover:text-slate-800 cursor-pointer transition-all duration-300 font-medium">Contact</a>
             </div>
             <div className="flex items-center gap-4">

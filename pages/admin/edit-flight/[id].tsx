@@ -1,6 +1,5 @@
-'use client'
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useToast } from "@/components/ui/use-toast"
 import { apiClient } from '@/lib/api'
@@ -11,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { CheckIcon } from "@radix-ui/react-icons"
 import { cn } from "@/lib/utils"
 
-const EditFlight = ({ params }: { params: { id: string } }) => {
+const EditFlight = () => {
     const router = useRouter()
     const { toast } = useToast()
     const [isLoading, setIsLoading] = useState(true)
@@ -19,6 +18,7 @@ const EditFlight = ({ params }: { params: { id: string } }) => {
     const [flightId, setFlightId] = useState<string | null>(null)
     const [openFrom, setOpenFrom] = useState(false)
     const [openTo, setOpenTo] = useState(false)
+    const id = router.query.id as string
 
     const [formData, setFormData] = useState({
         flightNumber: '',
@@ -44,12 +44,11 @@ const EditFlight = ({ params }: { params: { id: string } }) => {
     }, [router])
 
     useEffect(() => {
-        if (!isAdmin) return
+        if (!isAdmin || !id) return
 
         const fetchFlight = async () => {
             try {
                 setIsLoading(true)
-                const id = params.id
                 setFlightId(id)
                 
                 const response = await apiClient.get(`/flights/${id}`)
@@ -77,7 +76,7 @@ const EditFlight = ({ params }: { params: { id: string } }) => {
         }
 
         fetchFlight()
-    }, [isAdmin, params.id, router, toast])
+    }, [isAdmin, id, router, toast])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
