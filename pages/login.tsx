@@ -96,6 +96,9 @@ return (
             <div className='text-center text-sm'>
             <p>OR</p>
             </div>
+            <Link href='/'>
+                <h1 className='text-center'>← <span className='text-lime-500 cursor-pointer hover:underline'>Back to Home</span></h1>
+            </Link>
             <Link href='./sign-up'>
                 <h1 className='text-center'>Don&apos;t have an account?<span className='text-lime-500 cursor-pointer hover:underline'> Sign up</span> </h1>
             </Link>

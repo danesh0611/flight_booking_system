@@ -107,6 +107,9 @@ That&apos;s it! You&apos;ve just booked your flight with our website. We hope yo
                         <div>
                             <button onClick={handleSignUp} className="w-full p-4 text-sm bg-lime-500 hover:bg-lime-600 transition-all duration-300 rounded cursor-pointer text-white font-medium">Sign Up</button>
                         </div>
+                        <Link href='/'>
+                            <h1 className='text-center'>← <span className='text-lime-500 cursor-pointer hover:underline'>Back to Home</span></h1>
+                        </Link>
                         <Link href='/login'>
                             <h1 className='text-center'>Already have an account?<span className='text-lime-500 cursor-pointer hover:underline'> Login</span> </h1>
                         </Link>

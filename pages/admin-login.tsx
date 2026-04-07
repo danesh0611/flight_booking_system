@@ -91,6 +91,9 @@ const AdminLogin = () => {
                             <button onClick={handleAdminLogin} className="w-full p-4 text-sm bg-red-600 hover:bg-red-700 transition-all duration-300 rounded cursor-pointer text-white font-medium">Admin Login</button>
                         </div>
                         <div className='text-center text-sm'>
+                            <Link href='/'>
+                                <h1 className='text-center mb-2'>← <span className='text-lime-500 cursor-pointer hover:underline'>Back to Home</span></h1>
+                            </Link>
                             <Link href='/login'>
                                 <h1 className='text-lime-500 cursor-pointer hover:underline'>Back to User Login</h1>
                             </Link>
