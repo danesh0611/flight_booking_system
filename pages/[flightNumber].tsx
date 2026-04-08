@@ -39,6 +39,20 @@ const FlightNumber = () => {
     
     useEffect(() => {
         if(!router.isReady || !flightNumber) return;
+
+        const userJson = localStorage.getItem('user')
+        const userId = localStorage.getItem('userId')
+
+        if (!userJson || !userId) {
+            toast({
+                variant: "destructive",
+                title: "Login or Register Required",
+                description: "Please login or create an account before booking a flight",
+            })
+            const targetFlight = Array.isArray(flightNumber) ? flightNumber[0] : flightNumber
+            router.replace(`/login?redirect=/${encodeURIComponent(targetFlight)}`)
+            return
+        }
         
         const fetchFlight = async () => {
             try {

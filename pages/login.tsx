@@ -11,6 +11,19 @@ import { apiClient } from '@/lib/api';
 const Login = () => {
     const router = useRouter()
     const { toast } = useToast()
+
+    const getRedirectPath = () => {
+        if (typeof window === 'undefined') return '/'
+        const params = new URLSearchParams(window.location.search)
+        const redirect = params.get('redirect')
+
+        // Only allow internal relative paths.
+        if (redirect && redirect.startsWith('/')) {
+            return redirect
+        }
+
+        return '/'
+    }
     
     const [values, setValues] = useState({
         email: '',
@@ -48,7 +61,8 @@ const Login = () => {
                     title: "Success",
                     description: "Logged in successfully!",
                 })
-                setTimeout(() => router.replace('/'), 1000)
+                const redirectPath = getRedirectPath()
+                setTimeout(() => router.replace(redirectPath), 1000)
             } catch (error: any) {
                 toast({
                     variant: "destructive",

@@ -65,6 +65,19 @@ const Landing = () => {
     }
     
     const handleBook = (flightNumber: any) => {
+        const userJson = localStorage.getItem('user')
+        const userId = localStorage.getItem('userId')
+
+        if (!userJson || !userId) {
+            toast({
+                variant: "destructive",
+                title: "Login or Register Required",
+                description: "Please login or create an account to book a flight.",
+            })
+            router.push(`/login?redirect=/${encodeURIComponent(flightNumber)}`)
+            return
+        }
+
         router.push(`${flightNumber}`)
     }
     console.log(flights)
